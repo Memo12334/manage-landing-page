@@ -1,0 +1,114 @@
+@use "../abstracts" as *;
+
+.feature {
+
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+      gap: 7rem;
+    }
+  }
+
+  &__intro {
+    text-align: center;
+    padding-bottom: 2rem;
+    counter-reset: count;
+
+    h1 {
+      color: $darkBlue;
+      font-size: 2rem;
+    }
+
+    p {
+      color: $darkGrayishBlue;
+    }
+
+    @include breakpoint-up(large) {
+      text-align: left;
+    }
+  }
+
+  &__items {
+    @include breakpoint-up(large) {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    @include breakpoint-up(large) {
+      &::before {
+        content: "0" counter(count);
+        color: $veryLightGray;
+        position: absolute;
+        background-color: $brightRed;
+        display: flex;
+        width: 4.25rem;
+        border-radius: 100vw;
+        justify-content: center;
+        align-items: center;
+        counter-increment: count;
+        height: 2.5rem;
+      }
+    }
+  }
+
+  &__content {
+    @include breakpoint-up(large) {
+      display: flex;
+      flex-direction: column;
+      padding-left: 7rem;
+    }
+  }
+
+  &__title {
+    background-color: $veryPaleRed;
+    color: $darkBlue;
+    font-weight: bold;
+    height: 2.5rem;
+    position: relative;
+    margin-left: 2.125rem;
+    display: flex;
+    align-items: center;
+    padding-left: 64px;
+
+    @include breakpoint-up(large) {
+      background-color: inherit;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    &::before {
+      content: "0" counter(count);
+      color: $veryLightGray;
+      position: absolute;
+      background-color: $brightRed;
+      display: flex;
+      width: 4.25rem;
+      border-radius: 100vw;
+      inset: 0 -1.25rem;
+      justify-content: center;
+      align-items: center;
+      counter-increment: count;
+
+      @include breakpoint-up(large) {
+        display: none;
+      }
+    }
+  }
+
+  &__description {
+    padding: 1.5rem 0;
+    color: $darkGrayishBlue;
+    font-size: $font-sm;
+    line-height: 1.8;
+    padding: 1rem;
+
+    @include breakpoint-up(large) {
+      padding: 0;
+    }
+  }
+}

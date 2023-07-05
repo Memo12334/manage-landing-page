@@ -1,0 +1,52 @@
+@use "../abstracts" as *;
+
+.hero {
+  margin-bottom: 6rem;
+
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    background-image: url("/images/illustration-intro.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    min-height: 19rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 29rem;
+    }
+
+    @include breakpoint-up(large) {
+      min-height: 39rem;
+      flex: 1;
+      order: 2;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    padding: 0 2rem;
+    flex: 1;
+
+    p {
+      margin-bottom: 2rem;
+      color: $darkGrayishBlue;
+    }
+
+    @include breakpoint-up(large) {
+      text-align: left;
+      h1 {
+        font-size: $font-xlg;
+      }
+
+      p {
+        width: 22rem;
+      }
+    }
+  }
+}

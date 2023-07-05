@@ -1,0 +1,89 @@
+@use "../abstracts" as *;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: $veryDarkBlue;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.3125rem;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: $darkBlue;
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.775rem 2.275rem;
+  background-color: $brightRed;
+  color: $veryLightGray;
+  border-radius: 24px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &--pall {
+    padding: 3.6rem 1.8rem;
+  }
+
+  &--px {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+
+  &--py {
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
+  }
+
+  &--pt {
+    padding-top: 3.6rem;
+  }
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

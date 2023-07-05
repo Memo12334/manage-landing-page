@@ -1,0 +1,89 @@
+@use "../abstracts" as *;
+
+.review {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  &__icon {
+    img {
+      width: 4.5rem;
+      height: 4.5rem;
+      position: absolute;
+      top: -35px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    color: $darkBlue;
+    font-size: 2rem;
+  }
+
+  &__items {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+
+    @include breakpoint-up(large) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 2rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__content {
+    display: inline-block;
+    margin-top: 4rem;
+  }
+
+  &__item {
+    background-color: $veryLightGray;
+    height: 15.625rem;
+    position: relative;
+    margin-bottom: 1.25rem;
+
+    @include breakpoint-up(large) {
+      width: auto;
+    }
+  }
+
+  &__name {
+    margin-bottom: 1rem;
+    color: $darkBlue;
+    font-weight: bold;
+  }
+
+  &__description {
+    color: $darkGrayishBlue;
+    max-width: 20.625rem;
+    margin: 0 auto;
+
+    @include breakpoint-up(large) {
+      max-width: 30rem;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 3.2rem;
+
+    input[type="radio"] {
+      box-shadow: 0 0 0 3px $brightRed;
+      appearance: none;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      transition: all ease-in 0.2s;
+
+      &:checked {
+        background-color: $brightRed;
+      }
+    }
+  }
+}

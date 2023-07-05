@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+.getstarted {
+  background-color: $brightRed;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  min-height: 405px;
+  flex-direction: column;
+
+  @include breakpoint-up(large) {
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 300px;
+  }
+
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  h1 {
+    max-width: 19.375rem;
+    color: white;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+
+    @include breakpoint-up(large) {
+      max-width: 30rem;
+      text-align: left;
+    }
+  }
+
+  a {
+    background-color: white;
+    color: $brightRed;
+    font-weight: 600;
+  }
+}
